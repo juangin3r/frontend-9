@@ -1,0 +1,191 @@
+.header {
+    background-image: url(/images/desktop/reforma.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 800px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 50% 30%;
+    grid-template-rows: 22% 18% 30% 30%;
+    position: relative;
+    @include mquery($small) {
+        background-image: url(/images/mobile/image-header.jpg);
+        min-height: 540px;
+        height: 140vw;
+        max-height: 800px;
+        grid-template-columns: 20% 60% 20%;
+        grid-template-rows: 27% 25% 23% 25%;
+    }
+    .img-logo {
+        width: 160px;
+        height: 31px;
+        grid-area: 1/1/2/2;
+        position: relative;
+        left: 40px;
+        top: 47px;
+        @include mquery($small) {
+            width: 124px;
+            height: 24px;
+            top: 32px;
+            left: 26px;
+        }
+    }
+    .navbar-d {
+        grid-area: 1/3/2/4;
+        justify-self: flex-end;
+        @include mquery($medium) {
+            display: none;
+        }
+        .menu-d {
+            display: flex;
+            flex-direction: row;
+            font-family: $br;
+            position: relative;
+            top: 36px;
+            padding-inline-start: 0px;
+            .list-d {
+                font-size: 1.2rem;
+                list-style: none;
+                font-weight: 500;
+                .link-d {
+                    text-decoration: none;
+                    color: $w;
+                    margin-right: 3rem;
+                }
+                .contact-d {
+                    padding: 1.1rem 1.8rem;
+                    border-radius: 2rem;
+                    background-color: $w;
+                    color: $vddb;
+                    text-transform: uppercase;
+                    font-family: $fr;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    &:hover {
+                        color: $w;
+                        background-color: $gbo;
+                    }
+                }
+            }
+        }
+    }
+    .navbar-m {
+        display: none;
+        @include mquery($medium) {
+            flex-direction: column;
+            position: absolute;
+            background-color: $w;
+            width: 89%;
+            top: 7.5rem;
+            left: 5.5%;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                margin-top: -2rem;
+                align-self: flex-end;
+                border-right: 1rem solid $w;
+                border-top: 1rem solid $t;
+                border-left: 1rem solid $t;
+                border-bottom: 1rem solid $w;
+            }
+        }
+        @include mquery($small) {
+            top: 6.5rem;
+        }
+        @keyframes show {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        &.activo {
+            @include mquery($medium) {
+                display: flex;
+                animation: show 400ms ease-in-out both;
+            }
+        }
+        .menu-m {
+            padding: 0;
+            .list-m {
+                font-size: 1.26rem;
+                list-style: none;
+                font-weight: 600;
+                font-family: $br;
+                margin-top: 2.2rem;
+                text-align: center;
+                cursor: pointer;
+                .link-m {
+                    text-decoration: none;
+                    color: $dgb;
+                }
+                .contact-m {
+                    padding: 1.1rem 1.8rem;
+                    border-radius: 2rem;
+                    background-color: $y;
+                    color: $b;
+                    text-transform: uppercase;
+                    font-family: $fr;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                }
+            }
+            .margin-t {
+                margin-top: 1.3rem;
+            }
+            .contact-ml {
+                margin-top: 3rem;
+                margin-bottom: 2.6rem;
+            }
+        }
+    }
+    .container-hamburger {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        grid-area: 1/3/2/4;
+        .icon-hamburger {
+            margin: 3.4rem 2.4rem 0 0;
+            display: none;
+            @include mquery($medium) {
+                display: block;
+            }
+            @include mquery($small) {
+                margin: 2.2rem 2.4rem 0 0;
+            }
+        }
+    }
+    .title {
+        grid-area: 2/1/3/4;
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        color: $w;
+        font-weight: 800;
+        font-family: $fr;
+        letter-spacing: 0.7rem;
+        margin: 0;
+        padding-left: 14px;
+        text-align: center;
+        @include mquery($vsmall) {
+            font-size: 2.46rem;
+            letter-spacing: 0.4rem;
+            padding-left: 2px;
+        }
+    }
+    .arrow-down {
+        grid-area: 3/1/4/4;
+        height: 118px;
+        width: 40px;
+        margin: 1rem auto 0 auto;
+        @include mquery($small) {
+            min-height: 118px;
+            min-width: 40px;
+            height: 30vw;
+            width: 8vw;
+        }
+    }
+}

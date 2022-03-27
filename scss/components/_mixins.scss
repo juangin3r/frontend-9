@@ -1,0 +1,164 @@
+@mixin mquery($breakpoint) {
+    @media screen and (max-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin img {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@mixin title {
+    font-size: 2.5rem;
+    font-family: $fr;
+    color: $vddb;
+    font-weight: 900;
+    width: 70%;
+    margin: 10vw 0 2.1rem 18%;
+    @include mquery($small) {
+        font-size: 2.1rem;
+        width: 86%;
+        margin: 16vw 0 2rem 0;
+        padding: 0 7%;
+    }
+}
+
+@mixin paragraph{
+    width: 70%;
+    margin: 0 0 2.6rem 18%;
+    font-size: 1.2rem;
+    font-family: $br;
+    color: $dgb;
+    font-weight: 600;
+    opacity: 0.9;
+    line-height: 1.9rem;
+    @include mquery($small) {
+        width: 86%;
+        margin: 0 0 2.3rem 0;
+        padding: 0 7%;
+    }
+}
+
+@mixin more ($color){
+    display: block;
+    text-decoration: none;
+    font-family: $fr;
+    color: $vddb;
+    font-size: 1.1rem;
+    font-weight: 900;
+    width: 70%;
+    margin: 0 0 0 18.8%;
+    text-transform: uppercase;
+    @include mquery($small) {
+        margin: 0 0 0 0;
+        width: 86%;
+        padding: 0 7%;
+    }
+    &::after {
+        content: "";
+        display: block;
+        width: 144px;
+        height: 8px;
+        background-color: ($color);
+        border-radius: 1rem;
+        opacity: 0.5;
+        margin: -0.3rem 0 0 -0.54rem;
+        @include mquery($small) {
+            margin: -0.3rem auto 0 auto;
+        }
+    }
+    &:hover::after {
+        content: "";
+        opacity: 0.9;
+    }
+}
+@mixin icons {
+    margin-right: 1.8rem;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@mixin bkg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+@mixin title2 ($clr){
+    font-size: 2rem;
+    font-family: $fr;
+    color: ($clr);
+    font-weight: 900;
+    margin-top: 22rem;
+    margin-bottom: 0.8rem;
+    @include mquery($small)  {
+        margin-top: 25.5rem;
+    }
+}
+
+@mixin paragraph2 ($clr){
+    display: inline-block;
+    color: ($clr);
+    font-family: $br;
+    font-weight: 600;  
+    width: 44%;
+    line-height: 1.6rem;
+    @include mquery($small)  {
+        width: 86%;
+        padding: 0 7%;
+
+    }
+}
+
+@mixin img2($wdt){
+    width: ($wdt);
+    min-width: 76px;
+    border-radius: 50%;
+    margin-bottom: 2.1rem;
+    @include mquery($small) {
+       width: 76px;
+       margin-bottom: .9rem;
+     }
+}
+
+@mixin paragraph3{
+    font-family: $br;
+    font-size: 1.14rem;
+    color: $vdgb;
+    font-weight: 600;
+    line-height: 1.94rem;
+    margin-bottom: 4.3rem;
+    @include mquery($small) {
+       margin-bottom: 2rem;
+       padding: 0 7%;
+     }
+}
+
+@mixin name{
+    font-size: 1.12rem;
+    font-weight: 900;
+    font-family: $fr;
+    color: $vddb;
+    @include mquery($small) {
+       margin-bottom: 0rem;
+     }
+}
+
+@mixin job{
+    font-family: $br;
+    color: $gb;
+    font-weight: 600;
+    font-size: 1rem;
+    @include mquery($small) {
+       margin-top: .8rem;
+       margin-bottom: 4.2rem;
+     }
+}
