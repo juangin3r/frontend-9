@@ -6,7 +6,7 @@ body {
 }
 
 .header {
-  background-image: url(/images/desktop/reforma.jpg);
+  background-image: url(images/desktop/reforma.jpg);
   background-position: center;
   background-size: cover;
   height: 800px;
@@ -22,7 +22,7 @@ body {
 
 @media screen and (max-width: 650px) {
   .header {
-    background-image: url(/images/mobile/image-header.jpg);
+    background-image: url(images/mobile/image-header.jpg);
     min-height: 540px;
     height: 140vw;
     max-height: 800px;
@@ -563,7 +563,7 @@ body {
 }
 
 .first .a-3 {
-  background-image: url(/images/desktop/image-graphic-design.jpg);
+  background-image: url(images/desktop/image-graphic-design.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -575,7 +575,7 @@ body {
 
 @media screen and (max-width: 400px) {
   .first .a-3 {
-    background-image: url(/images/mobile/image-graphic-design.jpg);
+    background-image: url(images/mobile/image-graphic-design.jpg);
   }
 }
 
@@ -621,7 +621,7 @@ body {
 }
 
 .first .a-4 {
-  background-image: url(/images/desktop/image-photography.jpg);
+  background-image: url(images/desktop/image-photography.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -633,7 +633,7 @@ body {
 
 @media screen and (max-width: 650px) {
   .first .a-4 {
-    background-image: url(/images/mobile/image-photography.jpg);
+    background-image: url(images/mobile/image-photography.jpg);
   }
 }
 
